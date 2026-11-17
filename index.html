@@ -1113,7 +1113,7 @@
 const CONFIG={
   SUPABASE_URL:'https://pjxdysmegbzcrgarcmwy.supabase.co',
   SUPABASE_ANON_KEY:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqeGR5c21lZ2J6Y3JnYXJjbXd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwMjM0MjQsImV4cCI6MjA5MTU5OTQyNH0.q1ikAwWW7PVM80Hpmgv01iIvODdv8fOBco8aATb5tAQ',
-  APP_URL:'https://ignaciobraida-guamatur.github.io/Guamatur---Cupos/',
+  APP_URL:'https://guamatur.github.io/Guamatur---Cupos/',
   OAUTH_DOMINIO:'guamatur.com',
   N8N_WEBHOOK_AGENDA:'https://guamatur.app.n8n.cloud/webhook/cupo-agenda',
   N8N_WEBHOOK_ITINERARIO:'https://guamatur.app.n8n.cloud/webhook/cambio-itinerario', // ACTIVO desde 2026-07-15 (workflow fc3quyEIBc64Fzum, remitente diego.busch@; probado e2e). Vacío = no aparece el confirm ni se dispara.
@@ -1211,7 +1211,7 @@ const sb=supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY,{
 // ⚠️ Una sola versión por cadena y CORTA: el detalle va al CHANGELOG.md, no acá. Nacho ve este texto
 // completo en el encabezado (el resto ve solo el "bNN") y si es largo se desborda; además `APP_VERSION_CORTA`
 // saca el número con un match, así que dos "bNN" en la misma cadena confunden cuál es la versión.
-const APP_VERSION='Fase 2 · 2026-11-17 (b139 · Aviso al dar de baja o renombrar un vendedor con reservas vivas · sobre b138, cabos sueltos, b137, cartel con el plazo real, b136, plazo fijo, b135, margen, b134, Pago, b133, salidas grupales etapa 2, b132, menú lateral, y b131.)';
+const APP_VERSION='Fase 2 · 2026-11-17 (b140 · Mudanza a la organización Guamatur (dirección nueva) · sobre b139, aviso al dar de baja o renombrar un vendedor con reservas vivas, b138, cabos sueltos, b137, cartel con el plazo real, b136, plazo fijo, b135, margen, b134, Pago, b133, salidas grupales etapa 2, b132, menú lateral, y b131.)';
 // Columnas de 'vuelos' legibles por cualquier usuario. EXCLUYE precio_neto: el admin lo lee por RPC admin_get_precio_neto (gateada por es_admin). No usar select('*') sobre vuelos: la columna precio_neto quedó revocada a authenticated.
 // ⚠️ Toda columna que se agregue acá necesita `grant select (col) to authenticated` en la base, si no
 // PostgREST tira 400 y se cae la pantalla entera (gotcha #6). `emitido` viene de la migración 2026-08-06.
